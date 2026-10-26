@@ -16,7 +16,7 @@
 <meta property="og:url" content="https://kursovye-diplomy.github.io/">
 <meta property="og:image" content="https://kursovye-diplomy.github.io/og.png">
 <link rel="icon" type="image/png" href="favicon.png">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"СтудПомощь","url":"https://kursovye-diplomy.github.io/","description":"Помощь студентам: курсовые, дипломы, ВКР, отчёты по практике, статьи, рефераты, задачи и презентации.","sameAs":["https://t.me/Qosimovrustam7"],"areaServed":"RU"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"СтудПомощь","url":"https://kursovye-diplomy.github.io/","description":"Помощь студентам: курсовые, дипломы, ВКР, отчёты по практике, статьи, рефераты, задачи и презентации.","sameAs":["https://t.me/kursovye_diplomy_ru"],"areaServed":"RU"}</script>
 <style>html{color-scheme:light dark;background:#fff}body{margin:0;background:#fff}img{max-width:100%}[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -280,7 +280,7 @@ footer b{color:#fff;font-family:var(--f-head);font-size:20px;letter-spacing:.02e
     <div class="links"><a href="#works" data-i="nav_works"></a><a href="#how" data-i="nav_how"></a><a href="#pay" data-i="nav_pay"></a><a href="#faq" data-i="nav_faq"></a></div>
     <div class="nr">
       <div class="lang" role="group" aria-label="Язык"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="uz">UZ</button><button type="button" data-lang="en">EN</button></div>
-      <a class="btn btn-teal" href="https://t.me/Qosimovrustam7" target="_blank" rel="noopener"><svg><use href="#tg"/></svg><span data-i="cta_tg"></span></a>
+      <a class="btn btn-teal" href="https://t.me/kursovye_diplomy_ru" target="_blank" rel="noopener"><svg><use href="#tg"/></svg><span data-i="cta_tg"></span></a>
     </div>
   </div>
 </nav>
@@ -452,24 +452,24 @@ footer b{color:#fff;font-family:var(--f-head);font-size:20px;letter-spacing:.02e
         <div class="f"><label for="uni" data-i="l_uni"></label><input id="uni" type="text"></div>
         <div class="f"><label for="orig" data-i="l_orig"></label><input id="orig" type="number" min="0" max="100"></div>
         <div class="f full"><label for="notes" data-i="l_notes"></label><textarea id="notes"></textarea></div>
-        <div class="f full sendbox"><a class="btn btn-teal" id="send" href="https://t.me/Qosimovrustam7" target="_blank" rel="noopener"><svg><use href="#tg"/></svg><span data-i="send"></span></a><small data-i="send_note"></small></div>
+        <div class="f full sendbox"><a class="btn btn-teal" id="send" href="https://t.me/kursovye_diplomy_ru" target="_blank" rel="noopener"><svg><use href="#tg"/></svg><span data-i="send"></span></a><small data-i="send_note"></small></div>
       </form>
       <div class="pv">
         <span class="hand" data-i="pv_t"></span>
         <pre id="msg"></pre>
         <div style="display:flex;gap:10px;flex-wrap:wrap">
           <button class="btn btn-teal" type="button" id="copy" data-i="copy"></button>
-          <a class="btn btn-line" href="https://t.me/Qosimovrustam7" target="_blank" rel="noopener"><svg><use href="#tg"/></svg><span data-i="open_tg"></span></a>
+          <a class="btn btn-line" href="https://t.me/kursovye_diplomy_ru" target="_blank" rel="noopener"><svg><use href="#tg"/></svg><span data-i="open_tg"></span></a>
         </div>
         <div class="status" id="st" aria-live="polite"></div>
-        <div class="handle">Telegram: <span>@Qosimovrustam7</span></div>
+        <div class="handle">Telegram: <span>@kursovye_diplomy_ru</span></div>
       </div>
     </div>
   </section>
 </main>
 
-<footer><div class="wrap"><b>СтудПомощь</b><span data-i="foot"></span><span>Telegram: @Qosimovrustam7</span></div></footer>
-<div class="mcta"><a class="btn btn-teal" href="https://t.me/Qosimovrustam7" target="_blank" rel="noopener"><svg><use href="#tg"/></svg><span data-i="cta_tg"></span></a></div>
+<footer><div class="wrap"><b>СтудПомощь</b><span data-i="foot"></span><span>Telegram: @kursovye_diplomy_ru</span></div></footer>
+<div class="mcta"><a class="btn btn-teal" href="https://t.me/kursovye_diplomy_ru" target="_blank" rel="noopener"><svg><use href="#tg"/></svg><span data-i="cta_tg"></span></a></div>
 
 <script>
 var T={
@@ -575,7 +575,7 @@ function setLang(l){
 }
 function fmt(v){if(!v)return"—";var p=v.split("-");return p[2]+"."+p[1]+"."+p[0]}
 function build(){var t=T[lang],L=[t.m_hi,"",t.m_type+": "+el.type.value,t.m_topic+": "+(el.topic.value||"—"),t.m_subj+": "+(el.subject.value||"—"),t.m_pages+": "+(el.pages.value?el.pages.value+" "+t.m_pg:"—"),t.m_dead+": "+fmt(el.deadline.value),t.m_uni+": "+(el.uni.value||"—"),t.m_orig+": "+(el.orig.value?el.orig.value+"%":"—")];
-  if(el.notes.value.trim())L.push("",t.m_notes+": "+el.notes.value.trim());L.push("",t.m_new);var txt=L.join("\n");document.getElementById("msg").textContent=txt;document.getElementById("send").href="https://t.me/Qosimovrustam7?text="+encodeURIComponent(txt)}
+  if(el.notes.value.trim())L.push("",t.m_notes+": "+el.notes.value.trim());L.push("",t.m_new);var txt=L.join("\n");document.getElementById("msg").textContent=txt;document.getElementById("send").href="https://t.me/kursovye_diplomy_ru?text="+encodeURIComponent(txt)}
 ids.forEach(function(i){el[i].addEventListener("input",function(){dirty[i]=true;build()})});el.type.addEventListener("change",build);
 var d=new Date();d.setDate(d.getDate()+21);el.deadline.value=d.toISOString().slice(0,10);el.pages.value=60;el.orig.value=75;
 document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang)})});
