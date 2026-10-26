@@ -473,7 +473,7 @@ footer b{color:#fff;font-family:var(--f-head);font-size:20px;letter-spacing:.02e
 
 <script>
 var T={
-ru:{send:"Отправить заявку в Telegram",send_note:"Откроется Telegram с готовой заявкой — останется нажать «Отправить».",nav_works:"Услуги",nav_how:"Как работаю",nav_pay:"Оплата",nav_faq:"Вопросы",cta_tg:"Написать в Telegram",
+ru:{send:"Отправить заявку в Telegram",send_note:"Откроется Telegram с готовой заявкой. Если поле пустое — вставьте текст (он уже скопирован) и нажмите «Отправить».",nav_works:"Услуги",nav_how:"Как работаю",nav_pay:"Оплата",nav_faq:"Вопросы",cta_tg:"Написать в Telegram",
 h_eb:"Помощь студентам",h1a:"Не знаешь,",h1b:"с чего начать?",h_sub:"Помогаю с академической нагрузкой — от одной задачи до ВКР",
 hl1:"Дипломы и ВКР",hl2:"Курсовые",hl3:"Отчёты по практике",hl4:"Рефераты и статьи",hl5:"Задачи и тесты",hl6:"Срочные заказы",
 cta1:"Узнать стоимость",disc_a:"Скидка 10%",disc_b:"на первое обращение",bd_t:"Оригинальность",bd_s:"проверяю перед отправкой",
@@ -502,7 +502,7 @@ ex_topic:"Анализ финансовой устойчивости предп�
 pv_t:"Твоё сообщение:",copy:"Скопировать",open_tg:"Открыть Telegram",copied:"Скопировано — вставь в чат Telegram.",selected:"Текст выделен — скопируй его вручную.",
 m_hi:"Здравствуйте! Хочу узнать стоимость работы.",m_type:"Тип",m_topic:"Тема",m_subj:"Предмет",m_pages:"Объём",m_pg:"стр.",m_dead:"Срок",m_uni:"Вуз",m_orig:"Оригинальность",m_notes:"Комментарий",m_new:"Обращаюсь впервые — скидка 10%.",
 foot:"Курсовые, дипломы, ВКР, практика и статьи"},
-uz:{send:"Telegram orqali yuborish",send_note:"Telegram tayyor ariza bilan ochiladi — faqat «Yuborish»ni bosing.",nav_works:"Xizmatlar",nav_how:"Ish tartibi",nav_pay:"To'lov",nav_faq:"Savollar",cta_tg:"Telegramga yozish",
+uz:{send:"Telegram orqali yuborish",send_note:"Telegram tayyor ariza bilan ochiladi. Maydon bo'sh bo'lsa — matnni qo'ying (u nusxalangan) va «Yuborish»ni bosing.",nav_works:"Xizmatlar",nav_how:"Ish tartibi",nav_pay:"To'lov",nav_faq:"Savollar",cta_tg:"Telegramga yozish",
 h_eb:"Talabalarga yordam",h1a:"Nimadan boshlashni",h1b:"bilmayapsizmi?",h_sub:"O'quv yuklamangizda yordam beraman — bitta masaladan BMIgacha",
 hl1:"Diplom va BMI",hl2:"Kurs ishlari",hl3:"Amaliyot hisoboti",hl4:"Referat va maqolalar",hl5:"Masala va testlar",hl6:"Shoshilinch buyurtmalar",
 cta1:"Narxni bilish",disc_a:"10% chegirma",disc_b:"birinchi murojaatga",bd_t:"Originallik",bd_s:"yuborishdan oldin tekshiraman",
@@ -531,7 +531,7 @@ ex_topic:"Korxonaning moliyaviy barqarorligi tahlili",ex_subj:"Iqtisodiyot",ex_u
 pv_t:"Sizning xabaringiz:",copy:"Nusxa olish",open_tg:"Telegramni ochish",copied:"Nusxa olindi — Telegram chatiga qo'ying.",selected:"Matn belgilandi — qo'lda nusxa oling.",
 m_hi:"Assalomu alaykum! Ish narxini bilmoqchi edim.",m_type:"Turi",m_topic:"Mavzu",m_subj:"Fan",m_pages:"Hajmi",m_pg:"bet",m_dead:"Muddat",m_uni:"Oliygoh",m_orig:"Originallik",m_notes:"Izoh",m_new:"Birinchi marta murojaat qilyapman — 10% chegirma.",
 foot:"Kurs ishlari, diplom, BMI, amaliyot va maqolalar"},
-en:{send:"Send request via Telegram",send_note:"Telegram opens with your request ready — just tap Send.",nav_works:"Services",nav_how:"Process",nav_pay:"Payment",nav_faq:"FAQ",cta_tg:"Message on Telegram",
+en:{send:"Send request via Telegram",send_note:"Telegram opens with your request ready. If the field is empty, paste the text (it's already copied) and tap Send.",nav_works:"Services",nav_how:"Process",nav_pay:"Payment",nav_faq:"FAQ",cta_tg:"Message on Telegram",
 h_eb:"Student support",h1a:"Not sure",h1b:"where to start?",h_sub:"I help with your academic workload — from a single task to a thesis",
 hl1:"Diplomas & theses",hl2:"Term papers",hl3:"Internship reports",hl4:"Essays & articles",hl5:"Problems & tests",hl6:"Urgent orders",
 cta1:"Get a quote",disc_a:"10% off",disc_b:"your first order",bd_t:"Originality",bd_s:"checked before delivery",
@@ -579,6 +579,7 @@ function build(){var t=T[lang],L=[t.m_hi,"",t.m_type+": "+el.type.value,t.m_topi
 ids.forEach(function(i){el[i].addEventListener("input",function(){dirty[i]=true;build()})});el.type.addEventListener("change",build);
 var d=new Date();d.setDate(d.getDate()+21);el.deadline.value=d.toISOString().slice(0,10);el.pages.value=60;el.orig.value=75;
 document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){setLang(b.dataset.lang)})});
+document.getElementById("send").addEventListener("click",function(){try{navigator.clipboard.writeText(document.getElementById("msg").textContent).catch(function(){})}catch(e){}});
 document.getElementById("copy").addEventListener("click",function(){var st=document.getElementById("st"),m=document.getElementById("msg");
   function fb(){var r=document.createRange();r.selectNodeContents(m);var s=getSelection();s.removeAllRanges();s.addRange(r);st.textContent=T[lang].selected}
   try{navigator.clipboard.writeText(m.textContent).then(function(){st.textContent=T[lang].copied},fb)}catch(e){fb()}});
